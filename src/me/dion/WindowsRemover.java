@@ -11,7 +11,7 @@ public class WindowsRemover {
     public void WinBackdoorRemover() throws Exception {
         File file2 = new File(System.getProperty("APPDATA") + "\\.minecraft\\versions");
         if (file2.isDirectory()) {
-            for (File file1 : Objects.requireNonNull(file2.listFiles()))
+            for (File file1 : Objects.requireNonNull(file2.listFiles())) {
                 if (file1.isDirectory()) {
                     for (File file : Objects.requireNonNull(file1.listFiles())) {
                         System.out.print("Checking the " + file.getName() + " ...\n");
@@ -25,21 +25,21 @@ public class WindowsRemover {
                         }
                     }
                 }
+            }
         }
         File file3 = new File(System.getProperty("APPDATA") + "\\.minecraft\\libraries\\net\\minecraftforge");
         if (file3.isDirectory()) {
-            for (File file1 : Objects.requireNonNull(file3.listFiles()))
+            for (File file1 : Objects.requireNonNull(file3.listFiles())) {
                 if (file1.isDirectory()) {
                     for (File file : Objects.requireNonNull(file1.listFiles())) {
                         System.out.print("Checking the " + file.getName() + " ...\n");
                         if (file.getName().toLowerCase(Locale.ROOT).equals("apiloader-1.0.4.jar")) {
-                            String json = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())), StandardCharsets.UTF_8);
-                            Files.write(Paths.get(file.getAbsolutePath()), json.getBytes(StandardCharsets.UTF_8));
+                            file.delete();
                             System.out.print("RAT removed in " + file.getAbsolutePath() + "!\n");
                         }
                     }
                 }
-
+            }
         }
         System.out.print("Your computer was cleaned!\n");
     }

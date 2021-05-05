@@ -11,7 +11,7 @@ public class MacRemover {
     public void MacBackdoorRemover() throws Exception {
         File file2 = new File(System.getProperty("user.home") + "/Library/Application Support/minecraft/versions/");
         if (file2.isDirectory()) {
-            for (File file1 : Objects.requireNonNull(file2.listFiles()))
+            for (File file1 : Objects.requireNonNull(file2.listFiles())) {
                 if (file1.isDirectory()) {
                     for (File file : Objects.requireNonNull(file1.listFiles())) {
                         System.out.print("Checking the " + file.getName() + " ...\n");
@@ -25,20 +25,21 @@ public class MacRemover {
                         }
                     }
                 }
+            }
         }
         File file3 = new File(System.getProperty("user.home") + "/Library/Application Support/minecraft/libraries/net/minecraftforge/");
         if (file3.isDirectory()) {
-            for (File file1 : Objects.requireNonNull(file3.listFiles()))
+            for (File file1 : Objects.requireNonNull(file3.listFiles())) {
                 if (file1.isDirectory()) {
                     for (File file : Objects.requireNonNull(file1.listFiles())) {
                         System.out.print("Checking the " + file.getName() + " ...\n");
                         if (file.getName().toLowerCase(Locale.ROOT).equals("apiloader-1.0.4.jar")) {
                             file.delete();
                             System.out.print("RAT removed in " + file.getAbsolutePath() + "!\n");
-                            }
                         }
                     }
-
+                }
+            }
         }
         System.out.print("Your computer was cleaned!\n");
     }

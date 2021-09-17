@@ -2,7 +2,7 @@ package me.dion;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-	    System.out.print("Moneymod+2 cleaner by dion\n");
+	System.out.print("Moneymod+2 cleaner by dion\n");
         System.out.print("Deletes shit cattyn's rat from your computer\n");
         System.out.print("Detecting your OS name...\n");
         System.out.print("OS Detected! ");
